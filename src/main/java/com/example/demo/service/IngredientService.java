@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -30,8 +31,27 @@ public class IngredientService {
 		
 	}
 	
+	public Ingredient findById(Long id) {
+		if (ingredientRepo.findById(id).isPresent()) {
+			
+			return ingredientRepo.findById(id).get();
+		}
+		return null;
+		
+	}
+	
 	public Ingredient save(Ingredient ingredient) {
 		return ingredientRepo.save(ingredient);
 	}
+	
+	public void delete(Long ingredientId) {
+		try {
+			ingredientRepo.deleteById(ingredientId);
+	
+		} catch (EmptyResultDataAccessException ex) {
+			
+		}
+	}
+	
 	
 }
