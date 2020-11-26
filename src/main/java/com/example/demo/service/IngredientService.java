@@ -23,11 +23,11 @@ public class IngredientService {
 	@Autowired
 	private IngredientRepo ingredientRepo;
 	
-	public IngredientListDTO getAllIngredients(Pageable pageable) {
+	public List<Ingredient> getAllIngredients(Pageable pageable) {
 		List<Ingredient> findAllOrderByiIngredient_name = ingredientRepo.findAllByOrderByIngredientNameDesc(pageable);
-		IngredientListDTO ingredientListDTO = new IngredientListDTO();
-		ingredientListDTO.setIngredients( findAllOrderByiIngredient_name );
-		return ingredientListDTO; 
+		//IngredientListDTO ingredientListDTO = new IngredientListDTO();
+		//ingredientListDTO.setIngredients( findAllOrderByiIngredient_name );
+		return findAllOrderByiIngredient_name; 
 		
 	}
 	

@@ -7,12 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Repository;
 
 import com.example.demo.domainEntity.User;
 
 
 
-@RepositoryRestResource
+@Repository
 public interface UserRepo extends JpaRepository<User, Long> {
 
 	

@@ -6,10 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
+import org.springframework.data.rest.core.annotation.RestResource;
+
 import lombok.Data;
 
 @Entity
 @Data
+@RestResource(rel="clients69",path="clients69")
 public class Customer {
 
 	@Id
