@@ -41,7 +41,7 @@ public class BurgerController {
 		
 		//CollectionModel<EntityModel<Burger>> burgerCollectionModel = CollectionModel.wrap(findAllBurger);
 		//Link link = new Link("/burger/getAllBurger","getAllBurger")
-		//Link link = WebMvcLinkBuilder.linkTo(Home.class).slash("burger/getAllBurger").withRel("getAllTopBurger");
+		//Link link = WebMvcLinkBuilder.linkTo(BurgerController.class).slash("burger/getAllBurger").withRel("getAllTopBurger");
 		
 		
 		Link link = WebMvcLinkBuilder.linkTo(methodOn(BurgerController.class).getAllBurger()).withRel("getAllTopBurger");

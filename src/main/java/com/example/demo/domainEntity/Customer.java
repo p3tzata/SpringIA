@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@RestResource(rel="clients69",path="clients69")
+@RestResource(rel="customers69",path="customers69")
 public class Customer {
 
 	@Id
