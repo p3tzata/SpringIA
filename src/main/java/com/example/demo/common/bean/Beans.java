@@ -9,6 +9,7 @@ import org.springframework.hateoas.server.RepresentationModelProcessor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.domainEntity.representationModelProcessor.BurgerRepresentationModelProcessor;
 import com.google.gson.Gson;
@@ -44,5 +45,9 @@ public class Beans {
 		return new BurgerRepresentationModelProcessor();
 	}
 	
+	@Bean
+	public RestTemplate getRestTemplate() {
+		return new RestTemplate();
+	}
 	
 }

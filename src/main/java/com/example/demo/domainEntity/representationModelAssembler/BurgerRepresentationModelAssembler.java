@@ -21,17 +21,13 @@ public class BurgerRepresentationModelAssembler extends RepresentationModelAssem
 		return new  BurgerRepresentationModel(entity);
 	}
 	
-	
-	
-
-
-
-
 	@Override
 	public BurgerRepresentationModel toModel(Burger entity) {
 		return createModelWithId(entity.getBurger_id(), entity);
 	}
 
+	
+	
 	
 
 	

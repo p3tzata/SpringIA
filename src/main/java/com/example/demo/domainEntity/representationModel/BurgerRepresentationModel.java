@@ -16,19 +16,26 @@ import com.example.demo.domainEntity.Ingredient;
 import com.example.demo.domainEntity.representationModelAssembler.IngredientRepresentationModelAssembler;
 
 import lombok.Getter;
+import lombok.Setter;
 
 public class BurgerRepresentationModel extends RepresentationModel<BurgerRepresentationModel>{
 	
 	private IngredientRepresentationModelAssembler ingredientRepresentationModelAssembler;
-	@Getter
+	@Getter @Setter
 	private Long burger_id;
-	@Getter
+	@Getter @Setter
 	private String burger_name;
-	@Getter
+	@Getter @Setter
 	//private List<Ingredient> ingredients;
 	private CollectionModel<IngredientRepresentationModel> ingredients;
-	@Getter
+	@Getter @Setter
 	private Date creation_date;
+	
+	public BurgerRepresentationModel() {
+		
+		
+	}
+	
 	
 	public BurgerRepresentationModel(Burger burger) {
 		ingredientRepresentationModelAssembler = new IngredientRepresentationModelAssembler();

@@ -6,14 +6,15 @@ import org.springframework.hateoas.server.core.Relation;
 import com.example.demo.domainEntity.Ingredient;
 
 import lombok.Getter;
+import lombok.Setter;
 
-@Relation(value = "Ingredient69",collectionRelation = "IngredientList69")
+@Relation(value = "ingredients",collectionRelation = "ingredients")
 public class IngredientRepresentationModel extends RepresentationModel<IngredientRepresentationModel> {
-	@Getter
+	@Getter @Setter
 	private Long ingredientId;
-	@Getter
+	@Getter @Setter
 	private String ingredientName;
-	@Getter
+	@Getter @Setter
 	private String ingredientDescr;
 	public IngredientRepresentationModel(Ingredient entity) {
 		ingredientId=entity.getIngredientId();
@@ -21,7 +22,9 @@ public class IngredientRepresentationModel extends RepresentationModel<Ingredien
 		ingredientDescr=entity.getIngredientDescr();
 	}
 	
-	
+	public IngredientRepresentationModel() {
+		
+	}
 	
 	
 }
