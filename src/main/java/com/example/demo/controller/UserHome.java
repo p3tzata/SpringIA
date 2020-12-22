@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.function.EntityResponse;
 
 import com.example.demo.domainEntity.User;
-import com.example.demo.service.UserService;
+import com.example.demo.service.domain.UserService;
 
 @Controller
 @RequestMapping("/userHome")

@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
 
-import com.example.demo.service.UserService;
+import com.example.demo.service.domain.UserService;
 
 @Configuration
 @EnableWebSecurity

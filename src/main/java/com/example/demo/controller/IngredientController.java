@@ -25,7 +25,7 @@ import com.example.demo.domainEntity.Ingredient;
 import com.example.demo.domainEntity.representationModel.IngredientRepresentationModel;
 import com.example.demo.domainEntity.representationModelAssembler.IngredientRepresentationModelAssembler;
 import com.example.demo.dto.IngredientListDTO;
-import com.example.demo.service.IngredientService;
+import com.example.demo.service.domain.IngredientService;
 
 @RestController
 @RequestMapping(value = "/public/ingredient",produces = "application/json")

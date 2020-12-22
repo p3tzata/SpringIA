@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.domainEntity.Burger;
 import com.example.demo.domainEntity.representationModel.BurgerRepresentationModel;
 import com.example.demo.domainEntity.representationModelAssembler.BurgerRepresentationModelAssembler;
-import com.example.demo.service.BurgerService;
+import com.example.demo.service.domain.BurgerService;
 import com.google.gson.reflect.TypeToken;
 
 @RestController

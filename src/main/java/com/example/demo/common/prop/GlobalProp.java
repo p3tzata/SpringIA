@@ -18,6 +18,11 @@ public class GlobalProp {
 	@Max(value = 10)
 	private int ingrediantPageSize;
 	
+	private String readWriteDir;
+	
+	public  String getBaseIntegrationDir() {
+		return readWriteDir + "/integrationBaseDir";
+	}
 	
 	
 }

@@ -1,5 +1,12 @@
-{"properties": [{
-  "name": "burger.global.ingrediant-page-size",
-  "type": "java.lang.String",
-  "description": "A description for 'burger.global.ingrediant-page-size'"
-}]}
+{"properties": [
+  {
+    "name": "burger.global.ingrediant-page-size",
+    "type": "java.lang.String",
+    "description": "A description for 'burger.global.ingrediant-page-size'"
+  },
+  {
+    "name": "burger.global.read-write-dir",
+    "type": "java.lang.String",
+    "description": "A description for 'burger.global.read-write-dir'"
+  }
+]}

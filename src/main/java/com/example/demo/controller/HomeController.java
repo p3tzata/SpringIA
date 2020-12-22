@@ -40,9 +40,9 @@ import com.example.demo.domainEntity.Ingredient;
 import com.example.demo.dto.BurgerListDTO;
 import com.example.demo.dto.IngredientListDTO;
 import com.example.demo.dto.ResponseMessageOK;
-import com.example.demo.service.BurgerService;
-import com.example.demo.service.DemoService;
-import com.example.demo.service.IngredientService;
+import com.example.demo.service.domain.BurgerService;
+import com.example.demo.service.domain.DemoService;
+import com.example.demo.service.domain.IngredientService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
