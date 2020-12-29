@@ -1,3 +1,14 @@
+=== Kafka ==========================
+
+edit ../zookeeper.properties {}
+
+>zookeeper-server-start.bat ..\..\config\zookeeper.properties
+>kafka-server-start.bat ..\..\config\server.properties
+
+
+
+
+
 === Artemis ActiveMQ ===
 
 <dependency>

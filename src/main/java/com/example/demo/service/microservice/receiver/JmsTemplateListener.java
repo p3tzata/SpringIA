@@ -12,16 +12,14 @@ import com.example.demo.domainEntity.Burger;
 //@Component
 public class JmsTemplateListener {
 	
-	//@JmsListener(destination = "myJmsBroker.defaultQueue",containerFactory = "default_container")
-	@JmsListener(destination = "myJmsBroker.defaultQueue")
+	//Disable @JmsListener(destination = "myJmsBroker.defaultQueue")
 	public void receiveBurger(Burger burger) {
 		
 		System.out.println("1.received by Push burger with id: "+burger.getBurger_id()+" count ingredients:"+ burger.getIngredients().size());
 		
 	}
 	
-	//@JmsListener(destination = "myJmsBroker.defaultQueue",containerFactory = "default_container")
-	@JmsListener(destination = "myJmsBroker.defaultQueue")
+	//Disable @JmsListener(destination = "myJmsBroker.defaultQueue")
 	public void receiveBurger2(Burger burger) {
 		
 		System.out.println("2.received by Push burger with id: "+burger.getBurger_id()+" count ingredients:"+ burger.getIngredients().size());

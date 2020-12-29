@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.example.demo.domainEntity.Burger;
 
 //This is push model
-@Component
+//Disable @Component
 public class RabbitTemplateListener {
 	
 	
