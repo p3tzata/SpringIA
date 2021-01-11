@@ -8,5 +8,35 @@
     "name": "burger.global.read-write-dir",
     "type": "java.lang.String",
     "description": "A description for 'burger.global.read-write-dir'"
+  },
+  {
+    "name": "burger.global.email.username",
+    "type": "java.lang.String",
+    "description": "A description for 'burger.global.email.username'"
+  },
+  {
+    "name": "burger.global.email.password",
+    "type": "java.lang.String",
+    "description": "A description for 'burger.global.email.password'"
+  },
+  {
+    "name": "burger.global.email.mailbox",
+    "type": "java.lang.String",
+    "description": "A description for 'burger.global.email.mailbox'"
+  },
+  {
+    "name": "burger.global.email.host",
+    "type": "java.lang.String",
+    "description": "A description for 'burger.global.email.host'"
+  },
+  {
+    "name": "burger.global.pollRate",
+    "type": "java.lang.String",
+    "description": "A description for 'burger.global.pollRate'"
+  },
+  {
+    "name": "burger.global.email.pop3Port",
+    "type": "java.lang.String",
+    "description": "A description for 'burger.global.email.pop3Port'"
   }
 ]}

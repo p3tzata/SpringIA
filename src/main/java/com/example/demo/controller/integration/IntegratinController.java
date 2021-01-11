@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.domainEntity.Burger;
 import com.example.demo.domainEntity.Customer;
 import com.example.demo.domainEntity.SaleOrder;
+import com.example.demo.service.integrationFlow.email.EmailGateway;
 import com.example.demo.service.integrationFlow.file.FileWriterGateway;
 import com.google.gson.Gson;
 
@@ -26,7 +27,20 @@ public class IntegratinController {
 	FileWriterGateway gw;
 	
 	@Autowired
+	EmailGateway emailGateway;
+	
+	@Autowired
 	Gson gson;
+	
+	@GetMapping("/testIntegration_sendEmail")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<?> testIntegration_sendEmail() {
+		
+		emailGateway.sendEmail("test body 69");
+		
+		return new ResponseEntity<>("test body 123",HttpStatus.OK);
+	}
+	
 	
 	@GetMapping("/testIntegration_countLength")
 	@ResponseStatus(code = HttpStatus.OK)
