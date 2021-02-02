@@ -50,6 +50,17 @@ public class IngredientController {
 		
 	}
 	
+	@GetMapping("/getAllIngredient")
+	@ResponseStatus(code = HttpStatus.OK)
+	public List<Ingredient> getAllIngredient() {
+		List<Ingredient> findAll = ingredientService.findAll();
+		
+		return findAll;
+		
+	}
+	
+	
+	
 	@PostMapping(path = "/",consumes = {"application/json"})
 	public ResponseEntity<?> postIngredient(@RequestBody Ingredient ingredient) {
 		return new ResponseEntity<>((ingredientService.save(ingredient)),HttpStatus.CREATED);

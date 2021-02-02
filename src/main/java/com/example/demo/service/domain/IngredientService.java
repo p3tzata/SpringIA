@@ -40,6 +40,13 @@ public class IngredientService {
 		
 	}
 	
+	public List<Ingredient> findAll() {
+		
+		return ingredientRepo.findAll();
+	}
+	
+	
+	
 	public Ingredient save(Ingredient ingredient) {
 		return ingredientRepo.save(ingredient);
 	}
