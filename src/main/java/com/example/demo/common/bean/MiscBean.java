@@ -25,6 +25,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import com.example.demo.domainEntity.Burger;
 import com.example.demo.domainEntity.representationModelProcessor.BurgerRepresentationModelProcessor;
@@ -45,7 +46,12 @@ public class MiscBean {
 		return new Gson();
 	}
 	
+	@Bean
+	public WebClient getWebClient() {
 	
+		return WebClient.create("http://127.0.0.1:8080/");
+		
+	}
 	
 
 	

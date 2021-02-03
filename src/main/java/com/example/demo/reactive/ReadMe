@@ -1,11 +1,27 @@
 
 
+WebFlux ===================
+remove configuration with @EnableWebSecurity and add new one with @EnableWebFluxSecurity
 
+
+
+
+
+public static void main(String[] args) {
+		
+		SpringApplication app = new SpringApplication(SpringIaApplication.class);
+        app.setWebApplicationType(WebApplicationType.REACTIVE);
+        app.run(args);
+        //SpringApplication.run(SpringIaApplication.class, args);
+}
 
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-webflux</artifactId>
 </dependency>
+
+WebFlux end ==================
+
 
 
 <dependency>
@@ -21,3 +37,5 @@
 
 
 Operation can be categorized: Creation, Combination, Transformation and logic
+
+

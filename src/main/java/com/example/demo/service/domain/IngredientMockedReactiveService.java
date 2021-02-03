@@ -10,12 +10,17 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-public class IngredientReactiveService {
+public class IngredientMockedReactiveService {
 
 	
 	public Mono<Ingredient> findById(Long id) {
 		
-		return null;
+		Ingredient ingredient1 = new Ingredient();
+		ingredient1.setIngredientId(1L);
+		ingredient1.setIngredientName("name11111");
+		return Mono.just(ingredient1);
+		
+		
 		
 	}
 	

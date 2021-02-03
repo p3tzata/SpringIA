@@ -15,7 +15,7 @@ import org.springframework.test.web.reactive.server.WebTestClient.ControllerSpec
 
 import com.example.demo.controller.reactiveController.ReactiveAPI;
 import com.example.demo.domainEntity.Ingredient;
-import com.example.demo.service.domain.IngredientReactiveService;
+import com.example.demo.service.domain.IngredientMockedReactiveService;
 import com.example.demo.service.domain.IngredientService;
 
 import reactor.core.publisher.Flux;
@@ -37,7 +37,7 @@ class SpringIaApplicationTests {
 		ingredient1.setIngredientName("name1");
 		Mono<Ingredient> monoIngredient = Mono.just(ingredient1);
 		WebTestClient webTestClient = WebTestClient.
-				bindToController(new ReactiveAPI(new IngredientReactiveService())).build();
+				bindToController(new ReactiveAPI(new IngredientMockedReactiveService())).build();
 		
 		webTestClient
 		.post()
@@ -66,7 +66,7 @@ class SpringIaApplicationTests {
 		
 		Flux<Ingredient> fluxIngredient = Flux.fromIterable(list);
 		
-		IngredientReactiveService mockedIngredientService = Mockito.mock(IngredientReactiveService.class);
+		IngredientMockedReactiveService mockedIngredientService = Mockito.mock(IngredientMockedReactiveService.class);
 		
 		Mockito.when(mockedIngredientService.findAll()).thenReturn(fluxIngredient);
 		

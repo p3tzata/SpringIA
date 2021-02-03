@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.domainEntity.Burger;
 import com.example.demo.domainEntity.Ingredient;
 import com.example.demo.service.domain.BurgerService;
-import com.example.demo.service.domain.IngredientReactiveService;
+import com.example.demo.service.domain.IngredientMockedReactiveService;
 import com.example.demo.service.domain.IngredientService;
 
 import reactor.core.publisher.Flux;
@@ -32,17 +32,17 @@ public class ReactiveAPI {
 	
 
 	
-	private IngredientReactiveService ingredientReactiveService;
+	private IngredientMockedReactiveService ingredientReactiveService;
 	
 	@Autowired
-	public ReactiveAPI(IngredientReactiveService ingredientReactiveService) {
+	public ReactiveAPI(IngredientMockedReactiveService ingredientReactiveService) {
 		super();
 		this.ingredientReactiveService = ingredientReactiveService;
 	}
 
-	@GetMapping("/{ingrediantId}")
-	public Mono<Ingredient> getIngrediant(@PathVariable Long ingrediantId) {
-	
+	@GetMapping("/getIngrediant/{ingrediantId}")
+	public Mono<Ingredient> getIngrediant(@PathVariable Long ingrediantId) throws InterruptedException {
+		
 		Mono<Ingredient> mono = ingredientReactiveService.findById(ingrediantId);
 		
 		return mono;
