@@ -68,5 +68,15 @@ public class ReactiveAPI {
 	
 	}
 	
+	@ResponseStatus(code = HttpStatus.NOT_FOUND)
+	@GetMapping("/getIngrediantNotFound/{ingrediantId}")
+	public Mono<Ingredient> getIngrediantNotFound(@PathVariable Long ingrediantId) {
+		
+		return null;
+		
+	}
+	
+	
+	
 	
 }

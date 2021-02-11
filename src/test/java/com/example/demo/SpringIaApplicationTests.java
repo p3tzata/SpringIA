@@ -73,16 +73,8 @@ class SpringIaApplicationTests {
 		WebTestClient webTestClient = WebTestClient.bindToController(new ReactiveAPI(mockedIngredientService)).build();
 		//WebTestClient webTestClient = WebTestClient.bindToController(new ReactiveAPI(new IngredientReactiveService())).build();
 		
-		/*
-		FluxExchangeResult<String> returnResult = webTestClient
-		.get()
-		.uri("/public/reactiveAPI/getAllIngrediant")
-		.exchange()
-		.returnResult(String.class);
-		 String stringResponseBody = returnResult.getResponseBody().blockFirst();
-		 System.out.print(stringResponseBody);
-		 */
-		 
+		
+	 
 		
 		webTestClient
 		.get()

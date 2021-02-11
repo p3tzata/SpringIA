@@ -1,6 +1,7 @@
 
 
 WebFlux ===================
+spring-boot-starter-security is response for both of Spring MVC and Spring Webflux
 remove configuration with @EnableWebSecurity and add new one with @EnableWebFluxSecurity
 
 
