@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.5.RELEASE</version>
+		<version>2.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		
 	</properties>
 
 	<dependencies>
@@ -34,10 +35,7 @@
 		</dependency>
 		
 		
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-rest-hal-browser</artifactId>
-		</dependency>
+		
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -182,25 +180,7 @@
     <artifactId>spring-boot-starter-webflux</artifactId>
 </dependency>
 
-	
-	
-	<dependency>
-    <groupId>com.netflix.ribbon</groupId>
-    <artifactId>ribbon</artifactId>
-    <version>2.7.18</version>
-</dependency>
-	
-	
-	<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-			<version>3.0.1</version>
-		</dependency>
-	
 	</dependencies>
-
-
-
 
 	<build>
 		<plugins>
