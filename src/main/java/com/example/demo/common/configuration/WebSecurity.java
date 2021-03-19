@@ -16,9 +16,9 @@ import org.springframework.security.web.csrf.CsrfTokenRepository;
 
 import com.example.demo.service.domain.UserService;
 
-//When we are using WebFlux @Configuration
-//When we are using WebFlux @EnableWebSecurity
-//When we are using WebFlux @EnableGlobalMethodSecurity(prePostEnabled = true)
+@Configuration
+@EnableWebSecurity
+ @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 	
 	
@@ -34,7 +34,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 		
 		.authorizeRequests()
 								//.anyRequest().permitAll()
-								.antMatchers("/","/public/**","/publicTasks/**","/browser/**","/login","/register","/testRegister","/style/**").permitAll()
+								.antMatchers("/","/public/**","/actuator/**","/publicTasks/**","/browser/**","/login","/register","/testRegister","/style/**").permitAll()
 								//.antMatchers("/api/test").hasAnyRole("ADMIN")
 								.anyRequest().authenticated()
 			.and()

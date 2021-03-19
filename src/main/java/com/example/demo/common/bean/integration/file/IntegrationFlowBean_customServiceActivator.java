@@ -3,7 +3,9 @@ package com.example.demo.common.bean.integration.file;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.ServiceActivator;
+import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.handler.GenericHandler;
+import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHandler;
 
 import com.example.demo.domainEntity.SaleOrder;
@@ -29,5 +31,12 @@ public class IntegrationFlowBean_customServiceActivator {
  			   {return saleOrderRepo.save(payload);};
  		
 	}
+	
+	@Bean
+
+	public MessageChannel customChannel_out() {
+		return new DirectChannel();
+	}
+	
 	
 }

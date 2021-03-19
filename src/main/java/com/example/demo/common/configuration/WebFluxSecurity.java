@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.service.domain.UserReactiveService;
 
-@Configuration
-@EnableWebFluxSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@Configuration
+//@EnableWebFluxSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebFluxSecurity {
 
 	@Bean
@@ -22,7 +22,7 @@ public class WebFluxSecurity {
 		return http
 				.csrf().disable()
 				.authorizeExchange()
-					.pathMatchers("/","/public/**","/publicTasks/**","/browser/**","/login","/register","/testRegister","/style/**")
+					.pathMatchers("/","/public/**","/actuator/**","/publicTasks/**","/browser/**","/login","/register","/testRegister","/style/**")
 						.permitAll()
 					.anyExchange().authenticated()
 				.and().build();
