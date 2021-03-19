@@ -4,9 +4,16 @@ edit ../zookeeper.properties {}
 
 >zookeeper-server-start.bat ..\..\config\zookeeper.properties
 >kafka-server-start.bat ..\..\config\server.properties
+>kafka-topics.bat --create --topic cloud.ingredient --bootstrap-server localhost:9092
+
+
+spring.kafka.bootstrap-servers=127.0.0.1:9092
+<artifactId>spring-kafka</artifactId>
 
 
 
+
+http://127.0.0.1:[port]/commands
 
 
 === Artemis ActiveMQ ===
