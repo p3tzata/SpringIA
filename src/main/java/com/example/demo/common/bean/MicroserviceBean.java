@@ -6,10 +6,19 @@ import java.util.Map;
 import javax.jms.Destination;
 
 import org.apache.activemq.artemis.jms.client.ActiveMQQueue;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.ProducerFactory;
 
 import com.example.demo.domainEntity.Burger;
 
@@ -46,46 +55,44 @@ public class MicroserviceBean {
 			 return converter;
 		}
 	
-		/* 
-		String DEFAULT_BROKER_URL = "tcp://localhost:61616";
-
-		
-		
-		public ActiveMQConnectionFactory connectionFactory() throws JMSException {
-		  ActiveMQConnectionFactory connectionFactory =  new ActiveMQConnectionFactory();
-		  connectionFactory.setBrokerURL(DEFAULT_BROKER_URL);
-		  connectionFactory.setUser("admin");
-		  connectionFactory.setPassword("123456");
-		  //connectionFactory.setTrustedPackages(Arrays.asList("app.dto","java.lang"));
-		  return connectionFactory;
-		}
-		
-		*/
-		/*
 		@Bean
-		public JmsTemplate jmsTemplate() throws JMSException{
-		  JmsTemplate template = new JmsTemplate();
-		  template.setConnectionFactory(connectionFactory());
-		  template.setMessageConverter(getMessageConverter());
-		  template.setDefaultDestination(getDefautJmsDestination());
-		  
-		  return template;
-		}
-	*/
-		/*
-		@Bean(name = "default_container")
-		public DefaultJmsListenerContainerFactory defaultJmsListenerContainerFactory () throws JMSException {
-			DefaultJmsListenerContainerFactory lFactory = new DefaultJmsListenerContainerFactory();
-			lFactory.setConnectionFactory(this.connectionFactory());
-			lFactory.setPubSubDomain(true);
-			lFactory.setSessionTransacted(true);
+		public ProducerFactory<String, String> producerFactoryKafka() {
 			
+			String brokerAddress="127.0.0.1";
+			Map<String,Object> propsMap=new HashMap<>();
+			propsMap.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, brokerAddress);
+			propsMap.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+			propsMap.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 			
-			return lFactory;
+			return new DefaultKafkaProducerFactory<>(propsMap);
 			
 		}
-		*/
 		
+		 @Bean
+		    public KafkaTemplate<String, String> kafkaTemplate() {
+		        return new KafkaTemplate<>(producerFactoryKafka());
+		   }
+		 
+		 @Bean
+		    public ConsumerFactory<String, String> consumerFactory() {
+			 String brokerAddress="127.0.0.1";
+			 String groupId="testGroupID";
+		        Map<String, Object> props = new HashMap<>();
+		        props.put(
+		          ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, 
+		          brokerAddress);
+		        props.put(
+		          ConsumerConfig.GROUP_ID_CONFIG, 
+		          groupId);
+		        props.put(
+		          ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, 
+		          StringDeserializer.class);
+		        props.put(
+		          ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, 
+		          StringDeserializer.class);
+		        return new DefaultKafkaConsumerFactory<>(props);
+		    }
+		 
 		
 		
 
