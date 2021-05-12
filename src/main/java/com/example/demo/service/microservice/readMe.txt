@@ -17,7 +17,7 @@ http://127.0.0.1:[port]/commands
 
 https://www.youtube.com/watch?v=B5j3uNBH8X4
 https://thepracticaldeveloper.com/spring-boot-kafka-config/
-
+https://reflectoring.io/spring-boot-kafka/
 
 
 
