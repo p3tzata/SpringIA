@@ -5,7 +5,6 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
