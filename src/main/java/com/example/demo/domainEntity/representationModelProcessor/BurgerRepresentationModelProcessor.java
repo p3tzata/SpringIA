@@ -7,7 +7,7 @@ import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.RepresentationModelProcessor;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 
-import com.example.demo.controller.BurgerController;
+import com.example.demo.controller.domain.BurgerController;
 import com.example.demo.domainEntity.Burger;
 import com.example.demo.domainEntity.representationModel.BurgerRepresentationModel;
 

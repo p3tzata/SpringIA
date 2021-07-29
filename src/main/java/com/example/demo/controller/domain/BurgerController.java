@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.domain;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 

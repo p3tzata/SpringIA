@@ -2,7 +2,7 @@ package com.example.demo.domainEntity.representationModelAssembler;
 
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 
-import com.example.demo.controller.BurgerController;
+import com.example.demo.controller.domain.BurgerController;
 import com.example.demo.domainEntity.Burger;
 import com.example.demo.domainEntity.representationModel.BurgerRepresentationModel;
 

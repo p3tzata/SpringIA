@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,7 +30,7 @@ public class Burger {
 	@Size(min = 3,max = 100,message = "Validation size error")
 	private String burger_name;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Ingredient> ingredients;
 	
 	private Date creation_date;
@@ -39,6 +40,4 @@ public class Burger {
 		creation_date = new Date();
 	}
 	
-	
-
 }

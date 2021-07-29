@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.domain;
 
 import java.lang.reflect.Type;
 import java.util.List;
